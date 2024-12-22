@@ -7,7 +7,7 @@ namespace MyPortfolioWebApp.DAL.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DPCM; initial catalog=MyPortfolioDb;integrated security=true");
+            optionsBuilder.UseSqlServer("Server=DPCM; initial catalog=MyPortfolioDb;integrated security=true;TrustServerCertificate=True;");
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
