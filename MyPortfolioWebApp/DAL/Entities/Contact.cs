@@ -1,4 +1,4 @@
-﻿namespace MyPortfolioWebApp.DAL
+﻿namespace MyPortfolioWebApp.DAL.Entities
 {
     public class Contact
     {
