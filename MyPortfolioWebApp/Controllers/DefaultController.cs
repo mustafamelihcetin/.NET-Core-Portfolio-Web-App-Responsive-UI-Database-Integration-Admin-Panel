@@ -6,6 +6,7 @@ namespace MyPortfolioWebApp.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.b = "~/hola-master/images/hero-bg.jpg";
             return View();
         }
     }
