@@ -14,7 +14,6 @@ namespace MyPortfolioWebApp.Controllers
         {
             _context = context;
         }
-
         public IActionResult Index()
         {
             // Veritabanından tüm deneyimleri liste olarak al
