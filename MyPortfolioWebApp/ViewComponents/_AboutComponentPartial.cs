@@ -8,8 +8,10 @@ namespace MyPortfolioWebApp.ViewComponents
         MyPortfolioContext _context = new MyPortfolioContext();
         public IViewComponentResult Invoke()
         {
-            var values = _context.Abouts.ToList();
-            return View(values);
+            ViewBag.aboutTitle = _context.Abouts.Select(x => x.Title).FirstOrDefault();
+            ViewBag.aboutDetail = _context.Abouts.Select(x => x.Details).FirstOrDefault();
+            ViewBag.aboutSubDescription = _context.Abouts.Select(x => x.SubDescription).FirstOrDefault();
+            return View();
         }
     }
 }
