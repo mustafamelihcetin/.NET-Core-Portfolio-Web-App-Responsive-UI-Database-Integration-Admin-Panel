@@ -1,44 +1,21 @@
-﻿<footer>
+﻿@model List<MyPortfolioWebApp.DAL.Entities.SocialMedia>
+<footer>
     <div class="row">
         <div class="col-full">
-
             <div class="footer-logo">
                 <a class="footer-site-logo" href="#0"><img src="~/hola-master/images/logo.png" alt="Homepage"></a>
             </div>
 
             <ul class="footer-social">
-                <li>
-                    <a href="#0">
-                        <i class="im im-facebook" aria-hidden="true"></i>
-                        <span>Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <i class="im im-twitter" aria-hidden="true"></i>
-                        <span>Twitter</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <i class="im im-instagram" aria-hidden="true"></i>
-                        <span>Instagram</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <i class="im im-behance" aria-hidden="true"></i>
-                        <span>Behance</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <i class="im im-pinterest" aria-hidden="true"></i>
-                        <span>Pinterest</span>
-                    </a>
-                </li>
+                @foreach(var item in Model)
+                {
+                    <li>
+                        <a href="@item.Url">                            
+                            <span>@item.Title</span>
+                        </a>
+                    </li>
+                }
             </ul>
-
         </div>
     </div>
 
@@ -47,7 +24,7 @@
         <div class="col-twelve">
             <div class="copyright">
                 <span>© Copyright Hola @DateTime.Now.Year</span>
-                <span>Design by <a href="https://www.styleshout.com/">styleshout</a></span>
+                <span>Design by <a href="https://www.linkedin.com/in/melihctn">melih</a></span>
             </div>
 
             <div class="go-top">
@@ -73,7 +50,7 @@
 
         <div class="pswp__ui pswp__ui--hidden">
             <div class="pswp__top-bar">
-                <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Kapat (Esc)"></button> <button class="pswp__button pswp__button--share" title="Paylaş"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
                 <div class="pswp__preloader">
                     <div class="pswp__preloader__icn">
                         <div class="pswp__preloader__cut">
