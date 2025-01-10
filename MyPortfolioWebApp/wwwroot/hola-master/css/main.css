@@ -1719,6 +1719,7 @@ input[type="button"] {
             display: block;
             height: auto;
             margin: 0 0 4.2rem 0;
+
             border-top: 1px solid rgba(255, 255, 255, 0.07);
         }
 
