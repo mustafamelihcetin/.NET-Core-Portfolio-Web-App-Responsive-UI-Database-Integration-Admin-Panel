@@ -14,5 +14,17 @@ namespace MyPortfolioWebApp.Controllers
             var values = context.Experiences.ToList();
             return View(values);
         }
+        [HttpGet]
+        public IActionResult CreateExperience()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateExperience(Experience experience)
+        {
+            context.Experiences.Add(experience);
+            context.SaveChanges();
+            return RedirectToAction("ExperienceList");
+        }
     }
 }
