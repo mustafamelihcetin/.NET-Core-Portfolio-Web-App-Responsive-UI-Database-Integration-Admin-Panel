@@ -26,11 +26,7 @@ namespace MyPortfolioWebApp.Controllers
             context.SaveChanges();
             return RedirectToAction("ExperienceList");
         }
-        [HttpGet]
-        public IActionResult DeleteExperience()
-        {
-            return View();
-        }
+        
         public IActionResult DeleteExperience(int id)
         {
             var values = context.Experiences.Find(id);
