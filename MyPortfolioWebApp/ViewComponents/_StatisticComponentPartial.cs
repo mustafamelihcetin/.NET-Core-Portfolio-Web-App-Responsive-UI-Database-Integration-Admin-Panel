@@ -4,6 +4,9 @@ namespace MyPortfolioWebApp.ViewComponents
 {
     public class _StatisticComponentPartial:ViewComponent
     {
-        public IViewComponentResult Invoke() { return View(); }
+        public IViewComponentResult Invoke() 
+        { 
+            return View();
+        }
     }
 }
