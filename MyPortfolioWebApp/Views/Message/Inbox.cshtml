@@ -39,7 +39,14 @@
                                         <td>@item.Subject</td>
                                         <td>@item.SendDate.ToShortDateString()</td>
                                         <td><a href="/Experience/UpdateExperience/@item.ID" class="btn btn-warning">Mesajı Aç</a></td>
-                                        <td><a href="/Experience/UpdateExperience/@item.ID" class="btn btn-dark">Durum Değiştir</a></td>
+                                        @if(item.IsRead== true)
+                                        {
+                                            <td><a href="/Experience/UpdateExperience/@item.ID" class="btn btn-dark">Okunmadı olarak işaretle</a></td>
+                                        }
+                                        else
+                                        {
+                                            <td><a href="/Experience/UpdateExperience/@item.ID" class="btn btn-dark">Okundu olarak işaretle</a></td>
+                                        }
                                         <td><a href="/Experience/DeleteExperience/@item.ID" class="btn btn-danger">Sil</a></td>
                                         <td><a href="/Experience/UpdateExperience/@item.ID" class="btn btn-success">Güncelle</a></td>
                                     </tr>
