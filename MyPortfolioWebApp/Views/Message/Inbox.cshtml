@@ -37,7 +37,7 @@
                                         <td>@item.NameSurname</td>
                                         <td>@item.Subject</td>
                                         <td>@item.SendDate.ToShortDateString()</td>
-                                        <td><a href="/Experience/UpdateExperience/@item.ID" class="btn btn-warning">Mesajı Aç</a></td>
+                                        <td><a href="/Message/MessageDetail/@item.ID" class="btn btn-warning">Mesajı Aç</a></td>
                                         @if(item.IsRead== true)
                                         {
                                             <td><a href="/Message/ChangeIsReadToFalse/@item.ID" class="btn btn-dark">Okunmadı olarak işaretle</a></td>
