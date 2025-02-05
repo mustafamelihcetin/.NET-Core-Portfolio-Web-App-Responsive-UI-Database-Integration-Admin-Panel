@@ -10,7 +10,7 @@ namespace MyPortfolioWebApp.Controllers
         public IActionResult Index()
         {
             var values = context.ToDoLists.ToList();
-            return View(context);
+            return View(values);
         }
         [HttpGet]
         public IActionResult CreateToDoList()
@@ -40,6 +40,20 @@ namespace MyPortfolioWebApp.Controllers
         public IActionResult UpdateToDoList(ToDoList toDoList)
         {
             context.ToDoLists.Update(toDoList);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public IActionResult ChangeIsReadToTrue(int id)
+        {
+            var value = context.ToDoLists.Find(id);
+            value.Status = true;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public IActionResult ChangeIsReadToFalse(int id)
+        {
+            var value = context.ToDoLists.Find(id);
+            value.Status = false;
             context.SaveChanges();
             return RedirectToAction("Index");
         }

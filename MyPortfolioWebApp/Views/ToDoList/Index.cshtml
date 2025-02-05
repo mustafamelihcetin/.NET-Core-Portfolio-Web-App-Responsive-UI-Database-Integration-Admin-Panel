@@ -1,8 +1,69 @@
-﻿
+﻿@model List<MyPortfolioWebApp.DAL.Entities.ToDoList>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Layout/Index.cshtml";
 }
 
-<h1>Index</h1>
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Yapılacaklar</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Yapılacaklar Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Yapılacaklar ile ilgili işlemleri, aşağıdaki panelden yapabilirsiniz.
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">İçerik</th>
+                                    <th scope="col">Tarih</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    @if (item.Status == true)
+                                    {
+                                        <tr style="background-color: rgba(40, 167, 69, 0.2);">
+                                            <td>@item.ID</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Date.ToString("dd-MM-yyyy")</td>
+                                            <td>
+                                                <a href="/ToDoList/ChangeIsReadToFalse/@item.ID" class="btn btn-warning text-dark">
+                                                    ❌ Yapılmadı olarak işaretle
+                                                </a>
+                                            </td>
+                                            <td><a href="/ToDoList/DeleteToDoList/@item.ID" class="btn btn-danger">🗑️ Sil</a></td>
+                                            <td><a href="/ToDoList/UpdateToDoList/@item.ID" class="btn btn-primary">✏️ Güncelle</a></td>
+                                        </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr style="background-color: rgba(220, 53, 69, 0.2);">
+                                            <td>@item.ID</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Date.ToString("dd-MM-yyyy")</td>
+                                            <td>
+                                                <a href="/ToDoList/ChangeIsReadToTrue/@item.ID" class="btn btn-success">
+                                                    ✅ Yapıldı olarak işaretle
+                                                </a>
+                                            </td>
+                                            <td><a href="/ToDoList/DeleteToDoList/@item.ID" class="btn btn-danger">🗑️ Sil</a></td>
+                                            <td><a href="/ToDoList/UpdateToDoList/@item.ID" class="btn btn-primary">✏️ Güncelle</a></td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/ToDoList/CreateToDoList/" class="btn btn-info">➕ Yeni Görev Ekle</a>
 
