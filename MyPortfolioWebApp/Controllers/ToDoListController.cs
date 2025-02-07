@@ -28,6 +28,7 @@ namespace MyPortfolioWebApp.Controllers
         {
             var value = context.ToDoLists.Find(id);
             context.ToDoLists.Remove(value);
+            context.SaveChanges();
             return RedirectToAction("Index");
         }
         [HttpGet]
