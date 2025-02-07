@@ -3,11 +3,12 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Layout/Index.cshtml";
+    int count = 0;
 }
 
 <div class="content">
     <div class="container-fluid">
-        <h4 class="page-title">Yapılacaklar</h4>
+        <h4 class="page-title">To Do List</h4>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -32,10 +33,11 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+                                    count++;
                                     @if (item.Status == true)
                                     {
                                         <tr style="background-color: rgba(40, 167, 69, 0.2);">
-                                            <td>@item.ID</td>
+                                            <td>@count</td>
                                             <td>@item.Title</td>
                                             <td>@item.Date.ToString("dd-MM-yyyy")</td>
                                             <td>
@@ -50,7 +52,7 @@
                                     else
                                     {
                                         <tr style="background-color: rgba(220, 53, 69, 0.2);">
-                                            <td>@item.ID</td>
+                                            <td>@count</td>
                                             <td>@item.Title</td>
                                             <td>@item.Date.ToString("dd-MM-yyyy")</td>
                                             <td>
