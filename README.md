@@ -2,6 +2,8 @@
 
 Welcome to **MyPortfolioWebApp**, a dynamic personal portfolio application designed to showcase professional skills, experiences, and projects. Built with the power of **ASP.NET Core**, this web application is ideal for developers, freelancers, and professionals looking to present their work in an organized and elegant way.
 
+![Project Mockup](MyPortfolioWebApp/wwwroot/MyPortfolioWebAppMockup.png)
+
 ## Features
 
 - **Responsive Design**: Ensures compatibility with all devices.
